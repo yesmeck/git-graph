@@ -8,12 +8,13 @@
 # License: MIT
 #
 
-
 dot_dir=$HOME/.git-graph
-
-mkdir $dot_dir > /dev/null 2>&1
-
 database=$dot_dir/data
+
+if [[ ! -f $database  ]]; then
+  mkdir $dot_dir > /dev/null 2>&1
+  echo "CREATE TABLE commits(id INTEGER PRIMARY KEY, location TEXT, created_at TEXT);" | sqlite3 $database
+fi
 
 now=$(date '+%Y-%m-%d %H:%I:%S')
 
