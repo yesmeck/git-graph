@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# vim: set ft=sh :
+#
+# Git Graph
+#
+# Author: yesmeck@gmail.com
+#
+# License: MIT
+#
+
+
+database=$HOME/.git-graph
+
+now=$(date '+%Y-%m-%d %H:%I:%S')
+
+echo "INSERT INTO commits(created_at) VALUES ('${now}');" | sqlite3 $database
+

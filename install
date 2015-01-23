@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+# vim: set ft=sh :
+#
+# Git Graph installation script
+#
+# Author: yesmeck@gmail.com
+#
+# License: MIT
+#
+
+
+database=$HOME/.git-graph
+
+if [[ -f $database  ]]; then
+  echo "${database} exits."
+  exit 1
+fi
+
+cat <<EOF | sqlite3 $database
+  CREATE TABLE commits(created_at TEXT);
+EOF
+
