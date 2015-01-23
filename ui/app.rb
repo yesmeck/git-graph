@@ -19,5 +19,6 @@ get '/commits' do
       @commits[timestamp] = 1
     end
   end
+  headers 'Content-Type' => 'application/json'
   JSON.generate(@commits)
 end
