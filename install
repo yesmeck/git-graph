@@ -9,7 +9,7 @@
 #
 
 
-database=$HOME/.git-graph
+database=$HOME/.git-graph/data
 
 if [[ -f $database  ]]; then
   echo "${database} exits."
@@ -17,6 +17,6 @@ if [[ -f $database  ]]; then
 fi
 
 cat <<EOF | sqlite3 $database
-  CREATE TABLE commits(created_at TEXT);
+  CREATE TABLE commits(id INTEGER PRIMARY KEY, location TEXT, created_at TEXT);
 EOF
 

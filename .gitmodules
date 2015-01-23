@@ -1,0 +1,3 @@
+[submodule "corelocationcli"]
+	path = corelocationcli
+	url = git@github.com:fulldecent/corelocationcli.git

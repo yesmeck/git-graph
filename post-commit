@@ -9,9 +9,15 @@
 #
 
 
-database=$HOME/.git-graph
+dot_dir=$HOME/.git-graph
+
+mkdir $dot_dir > /dev/null 2>&1
+
+database=$dot_dir/data
 
 now=$(date '+%Y-%m-%d %H:%I:%S')
 
-echo "INSERT INTO commits(created_at) VALUES ('${now}');" | sqlite3 $database
+location=$(CoreLocationCLI --once  2>/dev/null | grep -o '<+.*,+.*>' | sed 's/[<\+>]//g')
+
+echo "INSERT INTO commits(location, created_at) VALUES ('${location}', '${now}');" | sqlite3 $database
 
