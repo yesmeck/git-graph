@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Git Graph</title>
+    <script src="d3.min.js"></script>
+    <script src="cal-heatmap.min.js"></script>
+    <link rel="stylesheet" href="cal-heatmap.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="cal-heatmap"></div>
+    <script type="text/javascript">
+      var cal = new CalHeatMap();
+      cal.init({
+        data: "commits",
+        domain : "day",
+        subDomain : "hour",
+        browsing: true,
+        range : 14,
+        itemName: ["commit", "commits"],
+      });
+    </script>
+  </body>
+</html>
