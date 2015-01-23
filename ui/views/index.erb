@@ -7,18 +7,19 @@
     <script src="cal-heatmap.min.js"></script>
     <link rel="stylesheet" href="cal-heatmap.css" />
     <link rel="stylesheet" href="style.css" />
-  </head>
+   </head>
   <body>
     <div id="cal-heatmap"></div>
     <script type="text/javascript">
       var cal = new CalHeatMap();
       cal.init({
-        data: "commits",
-        domain : "day",
-        subDomain : "hour",
+        data: 'commits',
+        domain : 'day',
+        subDomain : 'hour',
         browsing: true,
         range : 14,
-        itemName: ["commit", "commits"],
+        cellpadding: 1,
+        itemName: ['commit', 'commits'],
       });
     </script>
   </body>

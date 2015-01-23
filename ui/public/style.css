@@ -1,3 +1,45 @@
-#cal-heatmap {
-  margin: 0 auto;
+body {
+  background: #2d3a47;
 }
+
+#cal-heatmap {
+  width: 696px;
+  margin: 200px auto 0 auto;
+}
+
+#cal-heatmap .graph-rect {
+  fill: #35252d;
+}
+#cal-heatmap .q0 {
+  fill: #35252d;
+}
+#cal-heatmap .q1 {
+  fill: #fea1eb;
+  opacity: 0.1;
+}
+#cal-heatmap .q2 {
+  fill: #fea1eb;
+  opacity: 0.2;
+}
+#cal-heatmap .q3 {
+  fill: #fea1eb;
+  opacity: 0.4;
+}
+#cal-heatmap .q4 {
+  fill: #fea1eb;
+  opacity: 0.6;
+}
+#cal-heatmap .q5 {
+  fill: #fea1eb;
+  opacity: 0.8;
+}
+#cal-heatmap .q6 {
+  fill: #fea1eb;
+  opacity: 1;
+}
+#cal-heatmap .graph-rect:hover {
+  fill: #fff;
+  opacity: 1;
+  stroke-width: 0;
+}
+
