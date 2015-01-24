@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+# vim: set ft=sh :
+
+if [[ ! -d .git ]]; then
+  echo Can not find a git dir.
+  exit 1
+fi
+
+if [[ -f .git/hooks/post-commit ]]; then
+  echo post-commit exits.
+  exit 1
+fi
+
+cmd="ln -s $HOME/.git-graph/post-commit .git/hooks/post-commit"
+echo $cmd
+$cmd
