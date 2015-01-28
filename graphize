@@ -2,7 +2,7 @@
 # vim: set ft=sh :
 
 if [[ ! -d .git ]]; then
-  echo Can not find a git dir.
+  echo Can not find git dir.
   exit 1
 fi
 
